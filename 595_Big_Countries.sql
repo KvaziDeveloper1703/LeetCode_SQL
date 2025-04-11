@@ -1,9 +1,9 @@
 /*
-We have a table World with the following columns:
-+ name (string, unique country name, primary key).
-+ continent (string, continent the country belongs to).
-+ area (integer, country's area in square kilometers).
-+ population (integer, country's population).
+We have a table "World" with the following columns:
++ name (string, unique country name, primary key);
++ continent (string, continent the country belongs to);
++ area (integer, country's area in square kilometers);
++ population (integer, country's population);
 + gdp (bigint, country's gross domestic product).
 
 Definition of a "big country"
@@ -15,11 +15,11 @@ Write an SQL query to find the name, population, and area of all big countries.
 
 Return a table with the columns name, population, and area, containing information only about big countries. The result order can be arbitrary.
 
-У нас есть таблица World со следующими колонками:
-+ name (строка, уникальное имя страны, первичный ключ).
-+ continent (строка, континент, на котором расположена страна).
-+ area (целое число, площадь страны в квадратных километрах).
-+ population (целое число, население страны).
+У нас есть таблица "World" со следующими колонками:
++ name (строка, уникальное имя страны, первичный ключ);
++ continent (строка, континент, на котором расположена страна);
++ area (целое число, площадь страны в квадратных километрах);
++ population (целое число, население страны);
 + gdp (bigint, валовой внутренний продукт страны).
 
 Определение "большой страны"
