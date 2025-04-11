@@ -1,8 +1,8 @@
 /*
-We have a table Views with the following columns:
-+ article_id (integer, ID of the article).
-+ author_id (integer, ID of the author of the article).
-+ viewer_id (integer, ID of the user who viewed the article).
+We have a table "Views" with the following columns:
++ article_id (integer, ID of the article);
++ author_id (integer, ID of the author of the article);
++ viewer_id (integer, ID of the user who viewed the article);
 + view_date (date, date when the article was viewed).
 
 This table does not have a primary key, so duplicate rows may exist.
@@ -14,10 +14,10 @@ Write an SQL query to find all authors who have viewed at least one of their own
 Return a table with a single column id, containing the IDs of such authors.
 The result must be sorted by id in ascending order.
 
-У нас есть таблица Views со следующими колонками:
-+ article_id (целое число, id статьи).
-+ author_id (целое число, id автора статьи).
-+ viewer_id (целое число, id пользователя, который посмотрел статью).
+У нас есть таблица "Views" со следующими колонками:
++ article_id (целое число, id статьи);
++ author_id (целое число, id автора статьи);
++ viewer_id (целое число, id пользователя, который посмотрел статью);
 + view_date (дата, дата просмотра статьи).
 
 В этой таблице нет первичного ключа, поэтому возможны дубликаты строк.
