@@ -1,6 +1,6 @@
 /*
-We have a table Tweets with the following columns:
-+ tweet_id (integer, unique tweet identifier, primary key).
+We have a table "Tweets" with the following columns:
++ tweet_id (integer, unique tweet identifier, primary key);
 + content (string, tweet content).
 
 All characters in content are from an American keyboard, and no other special characters are used.
@@ -14,8 +14,8 @@ Write an SQL query to find the tweet_id of all invalid tweets.
 Return a table with a single column tweet_id, containing the IDs of such tweets.
 The result order can be arbitrary.
 
-У нас есть таблица Tweets со следующими колонками:
-+ tweet_id (целое число, уникальный идентификатор твита, первичный ключ).
+У нас есть таблица "Tweets" со следующими колонками:
++ tweet_id (целое число, уникальный идентификатор твита, первичный ключ);
 + content (строка, содержимое твита).
 
 Все символы в content набраны на американской клавиатуре, и в тексте нет других специальных символов.
