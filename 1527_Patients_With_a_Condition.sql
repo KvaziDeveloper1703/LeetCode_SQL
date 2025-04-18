@@ -34,4 +34,7 @@ The result can be returned in any order.
 
 SELECT patient_id, patient_name, conditions
 FROM Patients
-WHERE conditions REGEXP '\\bDIAB1';
+WHERE conditions LIKE 'DIAB1%' 
+   OR conditions LIKE '% DIAB1%' 
+   OR conditions LIKE '% DIAB1 %' 
+   OR conditions LIKE 'DIAB1 %';
