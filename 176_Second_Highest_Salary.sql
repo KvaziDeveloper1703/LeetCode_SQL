@@ -1,7 +1,5 @@
 /*
-You are given a table:
-
-Employee:
+You are given a table Employee:
     - id
     - salary
 
@@ -11,17 +9,25 @@ If there is no second highest salary, return null.
 
 Return the result with the following column: SecondHighestSalary.
 
-Дана таблица:
-
-Employee:
-    - id
-    - salary
+Дана таблица Employee:
+    - id
+    - salary
 
 Каждая строка содержит информацию о зарплате одного сотрудника.
 Напиши SQL-запрос, который вернёт вторую по величине уникальную зарплату из таблицы.
 Если второй зарплаты не существует, верни null.
 
 Результат должен содержать одну колонку: SecondHighestSalary.
+
+Annettu taulu Employee:
+    - id
+    - salary
+
+Jokainen rivi sisältää tiedon yhden työntekijän palkasta.
+Kirjoita SQL-kysely, joka palauttaa taulusta toiseksi suurimman yksilöllisen palkan.
+Jos toista palkkaa ei ole olemassa, palauta NULL.
+
+Tulostaulussa tulee olla yksi sarake: SecondHighestSalary.
 */
 
 SELECT (   
