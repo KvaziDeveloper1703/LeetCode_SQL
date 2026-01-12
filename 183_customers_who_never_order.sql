@@ -1,13 +1,13 @@
 /*
 You are given two tables:
 
-Customers
-+ id: Primary key (unique for each customer)
-+ name: Name of the customer
+Customers:
+    - id
+    - name
 
-Orders
-+ id: Primary key (unique for each order)
-+ customerId: Foreign key referencing Customers.id
+Orders:
+    - id
+    - customerId
 
 Write a SQL query to find all customers who never placed an order.
 
@@ -16,18 +16,33 @@ The result can be in any order.
 
 Даны две таблицы:
 
-Customers
-+ id: идентификатор клиента (первичный ключ)
-+ name: имя клиента
+Customers:
+    - id
+    - name
 
-Orders
-+ id: идентификатор заказа (первичный ключ)
-+ customerId: внешний ключ, ссылающийся на Customers.id
+Orders:
+    - id
+    - customerId
 
 Напишите SQL-запрос, который вернёт всех клиентов, не сделавших ни одного заказа.
 
 Результирующая таблица должна содержать один столбец name с именами таких клиентов.
-Порядок строк — произвольный.
+Порядок строк - произвольный.
+
+Sinulle on annettu kaksi taulua:
+
+Customers:
+    - id
+    - name
+
+Orders:
+    - id
+    - customerId
+
+Kirjoita SQL-kysely, joka palauttaa kaikki asiakkaat, jotka eivät ole tehneet yhtään tilausta.
+
+Tulostaulussa tulee olla yksi sarake name, joka sisältää näiden asiakkaiden nimet.
+Rivien järjestyksellä ei ole merkitystä.
 */
 
 SELECT Customers.name as Customers
