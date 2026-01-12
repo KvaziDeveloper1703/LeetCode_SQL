@@ -16,6 +16,15 @@ You must return the result with the column named NthHighestSalary.
 Если в таблице меньше n различных зарплат, нужно вернуть NULL.
 
 Результат должен содержать один столбец с названием NthHighestSalary.
+
+Teille on annettu taulu Employee, jossa on seuraavat sarakkeet:
+    - id
+    - salary
+
+Kirjoittakaa SQL-kysely, joka palauttaa taulusta n:nneksi suurimman (yksilöllisen) palkan.
+Jos taulussa on vähemmän kuin n erilaista palkkaa, tulee palauttaa NULL.
+
+Tulostaulussa tulee olla yksi sarake nimeltä NthHighestSalary.
 */
 
 CREATE FUNCTION getNthHighestSalary(N INT)
