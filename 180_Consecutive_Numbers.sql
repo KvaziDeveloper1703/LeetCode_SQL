@@ -1,23 +1,36 @@
-/*
-You are given a table:
-+ Logs:
-    + id: Unique ID (auto-incrementing from 1);
-    + num: A value represented as varchar.
+/* 
+You are given a table Logs:
+    - id
+    - num
 
 Each row represents a log entry, and the order is determined by id.
-Write an SQL query to find all numbers (num) that appear at least three times in a row (i.e., three or more consecutive rows with the same num).
+
+Write an SQL query to find all numbers (num) that appear at least three times in a row.
+
 Return the result with a single column named ConsecutiveNums.
 The result can be in any order.
 
-Дана таблица:
-+ Logs:
-    + id: уникальный идентификатор строки (автоинкремент с 1);
-    + num: значение в виде строки (varchar).
+Дана таблица Logs:
+    - id
+    - num
 
-Каждая строка — это запись в логах. Порядок определяется по id.
-Напиши SQL-запрос, который найдёт все значения num, которые идут подряд хотя бы три раза (то есть встречаются минимум в трёх соседних строках подряд с одинаковым значением).
+Каждая строка - это запись в логах. Порядок определяется по id.
+
+Напиши SQL-запрос, который найдёт все значения num, которые идут подряд хотя бы три раза.
+
 Верни результат в виде одной колонки ConsecutiveNums.
 Порядок строк в результате не важен.
+
+Sinulle on annettu taulu Logs, jossa on seuraavat sarakkeet:
+    - id
+    - num
+
+Jokainen rivi on lokimerkintä. Rivien järjestys määräytyy sarakkeen id perusteella.
+
+Kirjoita SQL-kysely, joka löytää kaikki num-arvot, jotka esiintyvät peräkkäin vähintään kolme kertaa.
+
+Palauta tulos yhtenä sarakkeena nimeltä ConsecutiveNums.
+Tulostaulun rivien järjestyksellä ei ole merkitystä.
 */
 
 SELECT DISTINCT logs_1.num AS ConsecutiveNums
