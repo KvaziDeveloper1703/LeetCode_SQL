@@ -22,6 +22,18 @@ The result can be returned in any order.
     - first_login
 
 Порядок строк не важен.
+
+Annetaan taulu Activity, jossa on tietoa pelaajien kirjautumisista.
+Jokainen rivi vastaa päivää, jolloin pelaaja kirjautui sisään ja pelasi pelejä.
+Yhdistelmä (player_id, event_date) on uniikki.
+
+Jokaiselle player_id-arvolle etsi ensimmäisen kirjautumisen päivämäärä.
+
+Palauta taulu, jossa on kentät:
+    - player_id
+    - first_login
+
+Rivien järjestyksellä ei ole merkitystä.
 */
 
 SELECT player_id, MIN(event_date) AS first_login
