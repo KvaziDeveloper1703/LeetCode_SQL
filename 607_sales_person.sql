@@ -14,6 +14,14 @@ The result can be in any order.
 
 Вернуть таблицу с полем: name - имя продавца.
 Порядок строк не важен.
+
+Annettu kolme taulukkoa: SalesPerson, Company ja Orders.
+Jokainen tilaus yhdistää myyjän ja yrityksen.
+
+Etsi kaikkien niiden myyjien nimet, jotka eivät ole tehneet yhtään tilausta yritykselle, jonka nimi on "RED".
+
+Palauta taulukko, jossa on kenttä: name - myyjän nimi.
+Rivien järjestyksellä ei ole väliä.
 */
 
 SELECT name
@@ -21,7 +29,6 @@ FROM SalesPerson
 WHERE sales_id NOT IN (
     SELECT orders.sales_id
     FROM Orders AS orders
-    JOIN Company AS company
-        ON orders.com_id = company.com_id
+    JOIN Company AS company ON orders.com_id = company.com_id
     WHERE company.name = 'RED'
 );
