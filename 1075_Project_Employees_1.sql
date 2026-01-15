@@ -1,33 +1,42 @@
 /*
 You are given two tables:
-+ Project:
-    + project_id: ID of the project;
-    + employee_id: ID of the employee working on the project;
-    + (project_id, employee_id) is the primary key.
+Project:
+    - project_id
+    - employee_id
 
-+ Employee:
-    + employee_id: ID of the employee;
-    + name: Employee's name;
-    + experience_years: Number of years of experience (not NULL).
+Employee:
+    - employee_id
+    - name
+    - experience_years
 
 Write an SQL query to return the average years of experience of employees for each project, rounded to 2 decimal places.
 
 Даны две таблицы:
-+ Project:
-    + project_id: идентификатор проекта;
-    + employee_id: идентификатор сотрудника, работающего над проектом;
-    + (project_id, employee_id) — первичный ключ.
+Project:
+    - project_id
+    - employee_id
 
-+ Employee:
-employee_id: идентификатор сотрудника
-name: имя сотрудника
-experience_years: количество лет опыта (не NULL)
+Employee:
+    - employee_id
+    - name
+    - experience_years
 
 Напиши SQL-запрос, который вернёт средний опыт сотрудников для каждого проекта, округлённый до двух знаков после запятой.
+
+Annetaan kaksi taulua:
+Project:
+    - project_id
+    - employee_id
+
+Employee:
+    - employee_id
+    - name
+    - experience_years
+
+Kirjoita SQL-kysely, joka palauttaa kunkin projektin työntekijöiden keskimääräisen työkokemuksen, pyöristettynä kahden desimaalin tarkkuuteen.
 */
 
-SELECT  Project.project_id,
-        ROUND(AVG(Employee.experience_years), 2) AS average_years
+SELECT Project.project_id, ROUND(AVG(Employee.experience_years), 2) AS average_years
 FROM Project
 JOIN Employee ON Project.employee_id = Employee.employee_id
 GROUP BY Project.project_id;
