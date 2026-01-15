@@ -1,8 +1,7 @@
 /*
-You are given a table:
-+ Seat:
-    + id: Unique ID of the seat (starts from 1 and increases continuously);
-    + student: Name of the student.
+You are given a table Seat:
+    - id
+    - student
 
 Each row represents a student and the seat they are currently in.
 
@@ -11,23 +10,37 @@ If the total number of students is odd, the last student’s seat remains unchan
 
 Return the result ordered by id in ascending order.
 
-Дана таблица:
-+ Seat:
-    + id: уникальный номер места (начинается с 1 и увеличивается без пропусков);
-    + student: имя студента.
+Дана таблица Seat:
+    - id
+    - student
 
 Каждая строка представляет студента и его текущее место.
 
 Напиши SQL-запрос, который поменяет местами каждую пару соседних студентов.
-Если студентов нечётное количество — последний остаётся на своём месте.
+Если студентов нечётное количество - последний остаётся на своём месте.
 
 Результат отсортируй по id по возрастанию.
+
+Annetaan taulu Seat:
+    - id
+    - student
+
+Jokainen rivi edustaa opiskelijaa ja hänen nykyistä paikkaansa.
+
+Kirjoita SQL-kysely, joka vaihtaa jokaisen vierekkäisen opiskelijaparin paikat keskenään.
+Jos opiskelijoiden määrä on pariton, viimeinen opiskelija jää omalle paikalleen.
+
+Palauta tulos järjestettynä id:n mukaan nousevasti.
 */
 
 SELECT
     CASE
-        WHEN id % 2 = 1 AND id + 1 <= (SELECT MAX(id) FROM Seat) THEN id + 1
-        WHEN id % 2 = 0 THEN id - 1
+        WHEN id % 2 = 1 AND id + 1 <= (SELECT MAX(id) FROM Seat)
+        THEN id + 1
+
+        WHEN id % 2 = 0
+        THEN id - 1
+
         ELSE id
     END AS id,
     student
