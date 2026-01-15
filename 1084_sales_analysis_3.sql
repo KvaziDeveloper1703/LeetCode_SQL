@@ -1,25 +1,51 @@
 /*
-You are given two tables: Product and Sales.
-Each sale is linked to a product.
-
-Find all products that were sold only in the first quarter of 2019, i.e. from 2019-01-01 to 2019-03-31 (inclusive), and were not sold outside this period.
-
-Return a table with:
+You are given two tables:
+Product:
     - product_id
     - product_name
 
-The result can be in any order.
+Sales:
+    - sale_id
+    - product_id
+    - sale_date
 
-Даны две таблицы: Product и Sales.
-Каждая продажа связана с продуктом.
+Each record in the Sales table represents a sale of a specific product from the Product table.
 
-Найдите все продукты, которые продавались только в первом квартале 2019 года, то есть в период с 2019-01-01 по 2019-03-31 включительно, и не продавались вне этого периода.
+Find all products that:
+    - were sold only in the first quarter of 2019
+    - and were not sold on any dates outside this period.
 
-Вернуть таблицу с полями:
+Даны две таблицы:
+Product:
     - product_id
     - product_name
 
-Порядок строк не важен.
+Sales:
+    - sale_id
+    - product_id
+    - sale_date
+
+Каждая запись в таблице Sales соответствует продаже определённого товара из таблицы Product.
+
+Нужно найти все товары, которые:
+    - продавались только в первом квартале 2019 года
+    - и не продавались ни в какие другие даты вне этого периода.
+
+Annetaan kaksi taulua:
+Product:
+    - product_id
+    - product_name
+
+Sales:
+    - sale_id
+    - product_id
+    - sale_date
+
+Jokainen taulun Sales rivi vastaa tietyn tuotteen myyntiä taulusta Product.
+
+Tehtävänä on löytää kaikki tuotteet, jotka:
+    - myytiin vain vuoden 2019 ensimmäisellä neljänneksellä
+    - eikä niitä myyty minään muuna ajankohtana tämän jakson ulkopuolella.
 */
 
 SELECT product.product_id, product.product_name
