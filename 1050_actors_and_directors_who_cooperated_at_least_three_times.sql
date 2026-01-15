@@ -12,6 +12,13 @@ Return the result in any order.
 Найдите все пары (actor_id, director_id), которые сотрудничали не менее 3 раз.
 
 Порядок строк не важен.
+
+Annetaan taulu ActorDirector, johon on tallennettu näyttelijöiden ja ohjaajien yhteistyöt.
+Jokainen rivi tarkoittaa yhtä yhteistyötä.
+
+Etsi kaikki parit (actor_id, director_id), jotka ovat tehneet yhteistyötä vähintään 3 kertaa.
+
+Rivien järjestyksellä ei ole väliä.
 */
 
 SELECT actor_id, director_id
