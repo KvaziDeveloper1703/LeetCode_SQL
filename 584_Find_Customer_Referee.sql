@@ -20,6 +20,17 @@ Return a table with a single column name, containing the names of such customers
 Написать SQL-запрос, который выбирает имена всех клиентов, которых НЕ порекомендовал клиент с id = 2.
 
 Вывести таблицу с одним столбцом name, содержащую имена таких клиентов. Порядок строк в ответе может быть произвольным.
+
+Meillä on taulu Customer:
+    - id
+    - name
+    - referee_id
+
+Jokainen taulun rivi edustaa asiakasta, hänen nimeään sekä referee_id-kenttää, joka kertoo, kuka hänet suositteli. Jos referee_id on NULL, asiakasta ei ole suositellut kukaan.
+
+Kirjoita SQL-kysely, joka hakee kaikkien niiden asiakkaiden nimet, joita asiakas, jonka id = 2, EI ole suositellut.
+
+Palauta tuloksena taulu, jossa on yksi sarake name, ja siinä näiden asiakkaiden nimet. Rivien järjestyksellä ei ole väliä.
 */
 
 SELECT name
