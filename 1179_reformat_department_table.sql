@@ -1,25 +1,36 @@
 /*
-You are given a table with the following columns: id (department ID), revenue, and month.
-    + The combination of (id, month) is the primary key;
-    + Each row represents the revenue for a department in a specific month;
-    + The month column has values from the set: ["Jan", "Feb", "Mar", ..., "Dec"].
+You are given a table with the following columns: id, revenue, and month.
+    - The combination of (id, month) is the primary key;
+    - Each row represents the revenue for a department in a specific month;
+    - The month column has values from the set: ["Jan", "Feb", "Mar", ..., "Dec"].
 
 Your task is to pivot the table so that:
-    + Each row corresponds to a department (id);
-    + There is one column for revenue of each month.
+    - Each row corresponds to a department (id);
+    - There is one column for revenue of each month.
 
 Return the resulting table in any order.
 
-У тебя есть таблица с колонками: id (идентификатор отдела), revenue (выручка) и month (месяц).
-    + Первичный ключ — это пара (id, month);
-    + Каждая строка отражает выручку определённого отдела за конкретный месяц;
-    + Колонка month принимает значения из списка: ["Jan", "Feb", "Mar", ..., "Dec"].
+У тебя есть таблица с колонками: id, revenue и month.
+    - Первичный ключ - это пара (id, month);
+    - Каждая строка отражает выручку определённого отдела за конкретный месяц;
+    - Колонка month принимает значения из списка: ["Jan", "Feb", "Mar", ..., "Dec"].
 
-Твоя задача — транспонировать таблицу так, чтобы:
-    + Каждая строка соответствовала одному отделу (id);
-    + Для каждого месяца была отдельная колонка с выручкой.
+Твоя задача - транспонировать таблицу так, чтобы:
+    - Каждая строка соответствовала одному отделу (id);
+    - Для каждого месяца была отдельная колонка с выручкой.
 
 Результат можно вернуть в произвольном порядке.
+
+Sinulla on taulu, jossa on sarakkeet id, revenue ja month.
+    - Ensisijainen avain on pari (id, month);
+    - Jokainen rivi kuvaa tietyn osaston liikevaihtoa tiettynä kuukautena;
+    - Sarake month voi saada arvot listasta: ["Jan", "Feb", "Mar", ..., "Dec"].
+
+Tehtäväsi on transponoida taulu niin, että:
+    - Jokainen rivi vastaa yhtä osastoa (id);
+    - Jokaiselle kuukaudelle on oma sarake, jossa on kyseisen kuukauden liikevaihto.
+
+Tuloksen voi palauttaa missä tahansa järjestyksessä.
 */
 
 SELECT
