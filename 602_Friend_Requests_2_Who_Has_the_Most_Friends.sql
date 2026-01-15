@@ -26,6 +26,15 @@ Return the result with the following columns:
 Верни результат с колонками:
     - id: ID пользователя с наибольшим числом друзей;
     - num: количество его друзей.
+
+Ystävyys on molemminpuolista: jos henkilö A lähetti ystäväpyynnön henkilölle B ja pyyntö hyväksyttiin, A ja B ovat ystäviä.
+
+Kirjoita SQL-kysely, joka määrittää käyttäjän, jolla on eniten ystäviä, sekä näiden ystävien määrän.
+On taattu, että tällainen käyttäjä on vain yksi.
+
+Palauta tulos sarakkeilla:
+    - id: eniten ystäviä omaavan käyttäjän ID;
+    - num: hänen ystäviensä lukumäärä.
 */
 
 SELECT id, COUNT(*) AS num
