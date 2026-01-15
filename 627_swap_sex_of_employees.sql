@@ -16,6 +16,15 @@ You must use one UPDATE statement only, without any temporary tables and without
     - 'f' → 'm'.
 
 Необходимо использовать один оператор UPDATE, без временных таблиц и без использования SELECT.
+
+Annetaan taulu Salary, jossa on työntekijöitä koskevia tietoja.
+Sarake sex saa arvot 'm' tai 'f'.
+
+Vaihda kaikki sarakkeen sex arvot keskenään:
+    - 'm' → 'f';
+    - 'f' → 'm'.
+
+Sinun tulee käyttää yhtä UPDATE-lauseketta, ilman väliaikaisia tauluja ja ilman SELECT-lauseketta.
 */
 
 UPDATE Salary
