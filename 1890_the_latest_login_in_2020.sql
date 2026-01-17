@@ -1,5 +1,5 @@
 /*
-You are given a table Logins with columns:
+You are given a table Logins:
     - user_id
     - time_stamp
 
@@ -20,9 +20,20 @@ The result order does not matter.
 
 Вернуть таблицу: user_id, last_stamp.
 Порядок строк не важен.
+
+Annetaan taulu Logins, jossa on sarakkeet:
+    - user_id
+    - time_stamp
+
+Etsi jokaiselle käyttäjälle viimeisin kirjautuminen vuonna 2020.
+    - Ota huomioon vain vuoden 2020 kirjautumistapahtumat;
+    - Sulje pois käyttäjät, joilla ei ole yhtään kirjautumista vuonna 2020.
+
+Palauta taulu: user_id, last_stamp.
+Rivien järjestyksellä ei ole väliä.
 */
 
 SELECT user_id, MAX(time_stamp) AS last_stamp
 FROM Logins
-WHERE time_stamp >= '2020-01-01' AND time_stamp <  '2021-01-01'
+WHERE time_stamp >= '2020-01-01' AND time_stamp < '2021-01-01'
 GROUP BY user_id;
