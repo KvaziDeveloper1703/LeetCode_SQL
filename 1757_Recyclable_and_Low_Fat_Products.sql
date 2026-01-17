@@ -1,30 +1,43 @@
 /*
-You are given a table:
-+ Products:
-    + product_id: unique ID of the product (primary key);
-    + low_fats: 'Y' if the product is low fat, 'N' otherwise;
-    + recyclable: 'Y' if the product is recyclable, 'N' otherwise.
+You are given a table Products:
+    - product_id
+    - low_fats
+    - recyclable
 
 Write an SQL query to find the product IDs of all products that are both low fat and recyclable.
+
 Return the result with the following column:
-+ product_id
+    - product_id
 
 The result can be returned in any order.
 
-Дана таблица:
-+ Products:
-    + product_id: уникальный идентификатор продукта (первичный ключ);
-    + low_fats: 'Y', если продукт с пониженным содержанием жира, иначе 'N';
-    + recyclable: 'Y', если продукт подлежит переработке, иначе 'N'.
+Дана таблица Products:
+    - product_id
+    - low_fats
+    - recyclable
 
 Напиши SQL-запрос, который вернёт идентификаторы продуктов, одновременно:
-+ с пониженным содержанием жира (low_fats = 'Y'),
-+ и подлежащих переработке (recyclable = 'Y').
+    - с пониженным содержанием жира (low_fats = 'Y'),
+    - и подлежащих переработке (recyclable = 'Y').
 
 Результат должен содержать колонку:
-+ product_id
+    - product_id
 
 Порядок строк в результате не имеет значения.
+
+Annetaan taulu Products:
+    - product_id
+    - low_fats
+    - recyclable
+
+Kirjoita SQL-kysely, joka palauttaa niiden tuotteiden tunnisteet, jotka ovat samanaikaisesti:
+    - vähärasvaisia (low_fats = 'Y'),
+    - ja kierrätettäviä (recyclable = 'Y').
+
+Tuloksen tulee sisältää sarake:
+    - product_id
+
+Rivien järjestyksellä ei ole väliä.
 */
 
 SELECT Products.product_id
