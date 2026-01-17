@@ -28,6 +28,21 @@ Return the result sorted by employee_id.
     - average_age
 
 Результат отсортируй по employee_id.
+
+Annetaan taulu Employees:
+    - employee_id
+    - name
+    - reports_to
+    - age
+
+Esihenkilö on työntekijä, jolla on vähintään yksi suora alainen.
+
+Kirjoita SQL-kysely, joka palauttaa:
+    - employee_id
+    - reports_count
+    - average_age
+
+Järjestä tulos employee_id-sarakkeen mukaan.
 */
 
 SELECT Employees.employee_id, Employees.name, COUNT(Reports.employee_id) AS reports_count, ROUND(AVG(Reports.age)) AS average_age
