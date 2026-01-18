@@ -1,18 +1,18 @@
 '''
 You are given two tables:
 Books:
-    - book_id;
-    - title;
-    - author;
-    - genre;
-    - pages.
+    - book_id
+    - title
+    - author
+    - genre
+    - pages
 
 Reading_sessions:
-    - session_id;
-    - book_id;
-    - reader_name;
-    - pages_read;
-    - session_rating.
+    - session_id
+    - book_id
+    - reader_name
+    - pages_read
+    - session_rating
 
 A book has polarized opinions if it has:
     - at least one rating ≥ 4, and
@@ -27,9 +27,13 @@ For each such book:
 Include only books where polarization_score ≥ 0.6.
 
 Return:
-    - book_id, title, author, genre, pages;
-    - rating_spread;
-    - polarization_score.
+    - book_id
+    - title
+    - author
+    - genre
+    - pages
+    - rating_spread
+    - polarization_score
 
 Order the result by:
     - polarization_score descending;
@@ -37,18 +41,18 @@ Order the result by:
 
 Даны две таблицы:
 Books:
-    - book_id;
-    - title;
-    - author;
-    - genre;
-    - pages.
+    - book_id
+    - title
+    - author
+    - genre
+    - pages
 
 Reading_sessions:
-    - session_id;
-    - book_id;
-    - reader_name;
-    - pages_read;
-    - session_rating.
+    - session_id
+    - book_id
+    - reader_name
+    - pages_read
+    - session_rating
 
 Книга считается имеющей полярные оценки, если:
     - есть хотя бы одна оценка ≥ 4, и
@@ -63,13 +67,57 @@ Reading_sessions:
 Включать только книги, у которых polarization_score ≥ 0.6.
 
 Вывести:
-    - book_id, title, author, genre, pages;
-    - rating_spread;
-    - polarization_score.
+    - book_id
+    - title
+    - author
+    - genre
+    - pages
+    - rating_spread
+    - polarization_score
 
 Отсортировать результат:
     - по polarization_score по убыванию;
     - по title по убыванию.
+
+Annetaan kaksi taulua:
+Books:
+    - book_id
+    - title
+    - author
+    - genre
+    - pages
+
+Reading_sessions:
+    - session_id
+    - book_id
+    - reader_name
+    - pages_read
+    - session_rating
+
+Kirjan katsotaan saaneen polarisoituneita arvioita, jos:
+    - sillä on vähintään yksi arvio ≥ 4, ja
+    - vähintään yksi arvio ≤ 2.
+
+Huomioi vain kirjat, joilla on vähintään 5 lukusessiota.
+
+Jokaiselle tällaiselle kirjalle:
+    - laske rating_spread = max(session_rating) − min(session_rating);
+    - laske polarization_score = (arvioiden määrä ≤ 2 tai ≥ 4) ÷ (sessioiden kokonaismäärä).
+
+Ota mukaan vain kirjat, joilla polarization_score ≥ 0.6.
+
+Tulosta:
+    - book_id
+    - title
+    - author
+    - genre
+    - pages
+    - rating_spread
+    - polarization_score
+
+Järjestä tulos:
+    - polarization_score laskevaan järjestykseen;
+    - title laskevaan järjestykseen.
 '''
 
 SELECT books.book_id, books.title, books.author, books.genre, books.pages,
@@ -85,8 +133,7 @@ SELECT books.book_id, books.title, books.author, books.genre, books.pages,
         ) AS DECIMAL(10, 2)
     ) / COUNT(reading_sessions.session_id) AS polarization_score
 FROM books
-JOIN reading_sessions
-    ON books.book_id = reading_sessions.book_id
+JOIN reading_sessions ON books.book_id = reading_sessions.book_id
 GROUP BY books.book_id, books.title, books.author, books.genre, books.pages
 HAVING
     COUNT(reading_sessions.session_id) >= 5
