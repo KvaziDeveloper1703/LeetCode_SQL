@@ -1,9 +1,8 @@
 /*
 You are given a table named products with the following structure:
-    - product_id - int;
-    - product_name - varchar;
-    - description - varchar.
-product_id is the primary key of the table.
+    - product_id
+    - product_name
+    - description
 
 Each row represents a product with its unique identifier, name, and description.
 
@@ -18,10 +17,9 @@ A serial number is considered valid if it meets all of the following conditions:
 Return the result table containing product_id, product_name, and description, ordered by product_id in ascending order.
 
 Дана таблица products со следующей структурой:
-    - product_id - целочисленный идентификатор товара;
-    - product_name - название товара;
-    - description - описание товара.
-Поле product_id является первичным ключом таблицы.
+    - product_id
+    - product_name
+    - description
 
 Каждая строка таблицы представляет собой товар с его уникальным идентификатором, названием и описанием.
 
@@ -34,6 +32,23 @@ Return the result table containing product_id, product_name, and description, or
     - серийный номер может располагаться в любой части описания.
 
 Верните таблицу с колонками product_id, product_name и description, отсортированную по product_id в порядке возрастания.
+
+Annetaan taulu products, jossa on seuraava rakenne:
+    - product_id
+    - product_name
+    - description
+
+Jokainen taulun rivi edustaa tuotetta, jolla on yksilöllinen tunniste, nimi ja kuvaus.
+
+Kirjoita SQL-kysely, joka löytää kaikki tuotteet, joiden kuvauksessa on kelvollinen sarjanumero.
+
+Sarjanumero katsotaan kelvolliseksi, jos se täyttää kaikki seuraavat ehdot:
+    - se alkaa kirjaimilla SN;
+    - sen jälkeen tulee täsmälleen 4 numeroa;
+    - sitten tulee väliviiva (-) ja täsmälleen 4 numeroa;
+    - sarjanumero voi sijaita missä tahansa kohdassa kuvausta.
+
+Palauta taulu, jossa on sarakkeet product_id, product_name ja description, ja järjestä tulos nousevasti sarakkeen product_id mukaan.
 */
 
 SELECT product_id, product_name, description

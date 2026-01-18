@@ -1,5 +1,5 @@
 /*
-You are given a table Departments:
+You are given a table with the following columns:
     - id
     - revenue
     - month
