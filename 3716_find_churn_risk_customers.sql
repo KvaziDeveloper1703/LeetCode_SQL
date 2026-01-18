@@ -36,7 +36,7 @@ Ordering:
 Определения:
     - Текущий тариф и сумма → по последнему событию;
     - Максимальный исторический платёж → MAX(monthly_amount) по всем событиям;
-    - Срок подписки → дата последнего события − дата первого события.
+    - Срок подписки → дата последнего события - дата первого события.
 
 Результат должен содержать:
     - user_id
@@ -48,6 +48,31 @@ Ordering:
 Сортировка:
     - По days_as_subscriber по убыванию;
     - Затем по user_id по возрастанию.
+
+Annettu taulu subscription_events.
+Etsi käyttäjät, joilla on churn-risk.
+
+Käyttäjä katsotaan churn-risk-käyttäjäksi, jos kaikki ehdot täyttyvät:
+    - Tilaus on aktiivinen - viimeisin event_type ei ole cancel;
+    - Käyttäjän historiassa on vähintään yksi downgrade;
+    - Nykyinen maksu < 50 % suurimmasta historiallisesta maksusta;
+    - Tilauksen kesto ≥ 60 päivää.
+
+Määritelmät:
+    - Nykyinen paketti ja summa → viimeisimmän tapahtuman perusteella;
+    - Suurin historiallinen maksu → MAX(monthly_amount) kaikista tapahtumista;
+    - Tilauksen kesto → viimeisimmän tapahtuman päivämäärä - ensimmäisen tapahtuman päivämäärä.
+
+Tuloksen tulee sisältää:
+    - user_id
+    - current_plan
+    - current_monthly_amount
+    - max_historical_amount
+    - days_as_subscriber
+
+Lajittelu:
+    - days_as_subscriber laskevasti;
+    - sen jälkeen user_id nousevasti.
 */
 
 WITH user_subscription_summary AS (
