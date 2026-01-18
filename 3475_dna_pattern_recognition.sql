@@ -26,6 +26,20 @@ Order the result by sample_id in ascending order.
     - Признаки has_start, has_stop, has_atat, has_ggg.
 
 Отсортируйте результат по sample_id по возрастанию.
+
+Annetaan taulu Samples, jossa on DNA-sekvenssejä.
+
+Määritä jokaiselle riville, toteutuuko seuraavat ehdot:
+    - sekvenssi alkaa merkkijonolla ATG;
+    - se päättyy merkkijonoon TAA, TAG tai TGA;
+    - se sisältää motiivin ATAT;
+    - se sisältää vähintään kolme peräkkäistä G-kirjainta.
+
+Tulosta:
+    - sample_id, dna_sequence, species;
+    - tunnisteet has_start, has_stop, has_atat, has_ggg.
+
+Järjestä tulos nousevasti sarakkeen sample_id mukaan.
 */
 
 SELECT sample_id, dna_sequence, species,
