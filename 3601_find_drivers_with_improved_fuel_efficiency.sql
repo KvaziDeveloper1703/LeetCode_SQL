@@ -34,6 +34,24 @@ Order by:
     - Сортировка:
         - efficiency_improvement по убыванию;
         - driver_name по возрастанию.
+
+Annetaan taulut drivers ja trips.
+
+Etsi kuljettajat, joiden polttoainetehokkuus on parantunut verrattaessa vuoden ensimmäistä ja toista puoliskoa.
+
+Ehdot:
+    - matkan polttoainetehokkuus = distance_km / fuel_consumed;
+    - vuoden ensimmäinen puolisko: tammikuu–kesäkuu;
+    - vuoden toinen puolisko: heinäkuu–joulukuu;
+    - huomioidaan vain kuljettajat, joilla on matkoja molemmissa vuoden puoliskoissa;
+    - tehokkuuden parannus = second_half_avg − first_half_avg;
+    - pyöristä kaikki arvot kahden desimaalin tarkkuuteen.
+
+Tulosta: driver_id, driver_name, first_half_avg, second_half_avg, efficiency_improvement.
+
+Järjestä tulos:
+    - efficiency_improvement laskevaan järjestykseen;
+    - driver_name nousevaan järjestykseen.
 */
 
 WITH trip_efficiency_by_half AS (
