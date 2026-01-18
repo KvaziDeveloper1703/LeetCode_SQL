@@ -32,6 +32,23 @@ Order the result by season in ascending order.
     - total_revenue
 
 Отсортируйте результат по season по возрастанию.
+
+Annetaan taulut sales ja products.
+
+Etsi jokaiselle vuodenajalle (Winter, Spring, Summer, Fall) suosituin tuotekategoria.
+
+Säännöt:
+    - suosio määräytyy myytyjen tuotteiden kokonaismäärän perusteella;
+    - jos tasapeli, valitse kategoria, jolla on suurempi liikevaihto;
+    - jos edelleen tasapeli, valitse leksikografisesti pienempi kategoria.
+
+Tulosta:
+    - season
+    - category
+    - total_quantity
+    - total_revenue
+
+Järjestä tulos nousevasti sarakkeen season mukaan.
 */
 
 WITH sales_with_season AS (
