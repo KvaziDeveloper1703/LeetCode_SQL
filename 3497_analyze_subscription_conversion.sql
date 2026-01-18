@@ -30,6 +30,22 @@ Order the result by user_id in ascending order.
     - paid_avg_duration
 
 Отсортируйте результат по user_id по возрастанию.
+
+Annetaan taulu UserActivity, jossa on käyttäjien päivittäinen aktiivisuus.
+
+Etsi käyttäjät, jotka ovat siirtyneet ilmaisesta kokeilujaksosta maksulliseen tilaukseen.
+
+Jokaiselle tällaiselle käyttäjälle:
+    - laske keskimääräinen päivittäinen aktiivisuus free trial -jakson aikana;
+    - laske keskimääräinen päivittäinen aktiivisuus maksullisen jakson aikana;
+    - pyöristä molemmat arvot kahden desimaalin tarkkuuteen.
+
+Tulosta:
+    - user_id
+    - trial_avg_duration
+    - paid_avg_duration
+
+Järjestä tulos nousevasti sarakkeen user_id mukaan.
 */
 
 WITH aggregated AS (
