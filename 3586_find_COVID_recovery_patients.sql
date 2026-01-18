@@ -34,6 +34,28 @@ Order by:
 Сортировка:
     - recovery_time по возрастанию;
     - patient_name по возрастанию.
+
+Annetaan taulut patients ja covid_tests.
+
+Etsi potilaat, jotka ovat toipuneet COVIDista.
+
+Ehdot:
+    - potilaalla täytyy olla vähintään yksi positiivinen testi;
+    - tämän testin jälkeen täytyy olla vähintään yksi negatiivinen testi myöhemmällä päivämäärällä;
+    - testejä, joiden status on Inconclusive, ei huomioida;
+    - toipumisaika = päivien määrä seuraavien välillä:
+        - ensimmäinen positiivinen testi;
+        - ensimmäinen negatiivinen testi sen jälkeen.
+
+Tulosta:
+    - patient_id
+    - patient_name
+    - age
+    - recovery_time
+
+Järjestä tulos:
+    - recovery_time nousevaan järjestykseen;
+    - patient_name nousevaan järjestykseen.
 */
 
 WITH first_positive_test AS (
