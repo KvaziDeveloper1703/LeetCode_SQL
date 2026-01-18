@@ -10,7 +10,7 @@ Definitions:
     - Sum meeting hours per employee per week;
     - Count how many weeks each employee is meeting-heavy.
 
-Include only employees who were meeting-heavy in at least 2 different weeks
+Include only employees who were meeting-heavy in at least 2 different weeks.
 
 Return:
     - employee_id
@@ -33,7 +33,7 @@ Ordering:
     - Нужно посчитать суммарные часы встреч по каждому сотруднику за каждую неделю;
     - Подсчитать количество таких недель для каждого сотрудника.
 
-Включать только сотрудников, у которых минимум 2 meeting-heavy недели
+Включать только сотрудников, у которых минимум 2 meeting-heavy недели.
 
 Результат должен содержать:
     - employee_id
@@ -44,19 +44,60 @@ Ordering:
 Сортировка:
     - По meeting_heavy_weeks по убыванию;
     - Затем по employee_name по возрастанию.
+
+Annetaan kaksi taulua: employees ja meetings.
+Jokaisella kokouksella on päivämäärä ja kesto tunneissa.
+Etsi työntekijät, jotka ovat meeting-heavy.
+
+Määritelmät:
+    - työviikko: maanantaista sunnuntaihin;
+    - standardityöviikko = 40 tuntia;
+    - työntekijä katsotaan meeting-heavyksi, jos hän on käyttänyt kokouksiin yli 20 tuntia viikossa;
+    - laske kokousten kokonaiskesto tunneissa jokaiselle työntekijälle joka viikolta;
+    - laske tällaisten viikkojen määrä jokaiselle työntekijälle.
+
+Ota mukaan vain työntekijät, joilla on vähintään 2 meeting-heavy-viikkoa.
+
+Tuloksen tulee sisältää:
+    - employee_id
+    - employee_name
+    - department
+    - meeting_heavy_weeks
+
+Järjestä tulos:
+    - meeting_heavy_weeks laskevaan järjestykseen;
+    - sen jälkeen employee_name nousevaan järjestykseen.
 */
 
 WITH weekly_meeting_hours AS (
-    SELECT meetings.employee_id, DATE_SUB(meetings.meeting_date, INTERVAL (WEEKDAY(meetings.meeting_date)) DAY) AS week_start_date, SUM(meetings.duration_hours) AS total_meeting_hours
+    SELECT
+        meetings.employee_id,
+        DATE_SUB(
+            meetings.meeting_date,
+            INTERVAL WEEKDAY(meetings.meeting_date) DAY
+        ) AS week_start_date,
+        SUM(meetings.duration_hours) AS total_meeting_hours
     FROM meetings
-    GROUP BY meetings.employee_id, DATE_SUB(meetings.meeting_date, INTERVAL (WEEKDAY(meetings.meeting_date)) DAY)),
+    GROUP BY
+        meetings.employee_id,
+        DATE_SUB(
+            meetings.meeting_date,
+            INTERVAL WEEKDAY(meetings.meeting_date) DAY
+        )
+),
 meeting_heavy_weeks_per_employee AS (
-    SELECT weekly_meeting_hours.employee_id, COUNT(*) AS meeting_heavy_weeks
+    SELECT
+        weekly_meeting_hours.employee_id,
+        COUNT(*) AS meeting_heavy_weeks
     FROM weekly_meeting_hours
     WHERE weekly_meeting_hours.total_meeting_hours > 20
     GROUP BY weekly_meeting_hours.employee_id
 )
-SELECT employees.employee_id, employees.employee_name, employees.department, meeting_heavy_weeks_per_employee.meeting_heavy_weeks
+SELECT
+    employees.employee_id,
+    employees.employee_name,
+    employees.department,
+    meeting_heavy_weeks_per_employee.meeting_heavy_weeks
 FROM meeting_heavy_weeks_per_employee
 JOIN employees ON employees.employee_id = meeting_heavy_weeks_per_employee.employee_id
 WHERE meeting_heavy_weeks_per_employee.meeting_heavy_weeks >= 2
