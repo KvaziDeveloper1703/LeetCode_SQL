@@ -30,6 +30,23 @@ Order by:
 Сортировка:
     - improvement_score по убыванию;
     - name по возрастанию.
+
+Etsi työntekijät, joilla on havaittavissa tasainen arvioinnin nousu kolmessa viimeisimmässä palautteessa.
+
+Ehdot:
+    - työntekijällä täytyy olla vähintään 3 arviota;
+    - huomioon otetaan vain 3 viimeisintä arviota;
+    - arvioiden täytyy olla tiukasti nousevia;
+    - parannusmittari = viimeisin arvio - ensimmäinen arvio.
+
+Tulosta:
+    - employee_id
+    - name
+    - improvement_score
+
+Järjestä tulos:
+    - improvement_score laskevaan järjestykseen;
+    - name nousevaan järjestykseen.
 */
 
 WITH reviews_with_row_numbers AS (
