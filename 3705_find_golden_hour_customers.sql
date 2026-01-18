@@ -3,8 +3,8 @@ You are given the table restaurant_orders.
 Find golden hour customers.
 
 Peak hours:
-    - 11:00-14:00;
-    - 18:00-21:00.
+    - 11:00 - 14:00;
+    - 18:00 - 21:00.
 
 A customer is golden hour if ALL conditions are met:
     - Made at least 3 orders;
@@ -26,13 +26,13 @@ Ordering:
 Найти golden hour клиентов.
 
 Часы пик:
-    - 11:00-14:00;
-    - 18:00-21:00.
+    - 11:00 - 14:00;
+    - 18:00 - 21:00.
 
 Клиент считается golden hour, если выполняются ВСЕ условия:
-    - Сделал минимум 3 заказа.
-    - Не менее 60% заказов сделаны в часы пик.
-    - Оценено минимум 50% заказов.
+    - Сделал минимум 3 заказа;
+    - Не менее 60% заказов сделаны в часы пик;
+    - Оценено минимум 50% заказов;
     - Средняя оценка ≥ 4.0, считается только по оценённым заказам.
 
 Результат должен содержать:
@@ -44,6 +44,29 @@ Ordering:
 Сортировка:
     - По average_rating по убыванию;
     - Затем по customer_id по убыванию.
+
+Annetaan taulu restaurant_orders.
+Etsi golden hour -asiakkaat.
+
+Ruuhka-ajat:
+    - 11:00–14:00;
+    - 18:00–21:00.
+
+Asiakas katsotaan golden hour -asiakkaaksi, jos hän täyttää kaikki seuraavat ehdot:
+    - on tehnyt vähintään 3 tilausta;
+    - vähintään 60 % tilauksista on tehty ruuhka-aikoina;
+    - vähintään 50 % tilauksista on arvioitu;
+    - keskiarvoarvio on ≥ 4.0, ja se lasketaan vain arvioiduista tilauksista.
+
+Tuloksen tulee sisältää:
+    - customer_id
+    - total_orders
+    - peak_hour_percentage
+    - average_rating
+
+Järjestä tulos:
+    - average_rating laskevaan järjestykseen;
+    - sen jälkeen customer_id laskevaan järjestykseen.
 */
 
 SELECT customer_id, COUNT(*) AS total_orders, ROUND(100 * SUM(CASE WHEN ((TIME(order_timestamp) BETWEEN '11:00:00' AND '13:59:59') OR (TIME(order_timestamp) BETWEEN '18:00:00' AND '20:59:59')) THEN 1 ELSE 0 END) / COUNT(*), 0) AS peak_hour_percentage, ROUND(AVG(order_rating), 2) AS average_rating
