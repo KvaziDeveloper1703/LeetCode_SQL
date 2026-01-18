@@ -30,6 +30,22 @@ Order by customer_id ascending.
 Выведите только customer_id.
 
 Отсортируйте customer_id по возрастанию.
+
+Annetaan taulu customer_transactions.
+Etsi lojaalit asiakkaat.
+
+Asiakas katsotaan lojaaliksi, jos hän täyttää kaikki seuraavat ehdot:
+    - on tehnyt vähintään 3 ostosta;
+    - on ollut aktiivinen vähintään 30 päivää;
+    - palautusten osuus on < 20 %.
+
+Määritelmät:
+    - palautusten osuus = refund-tapahtumien määrä / kaikkien transaktioiden määrä;
+    - kaikkien transaktioiden määrä = ostot + palautukset.
+
+Tulosta vain: customer_id.
+
+Järjestä customer_id nousevaan järjestykseen.
 */
 
 SELECT customer_id
