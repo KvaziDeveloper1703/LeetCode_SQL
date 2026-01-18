@@ -36,6 +36,25 @@ Order the result by:
     - customer_count по убыванию;
     - product1_id по возрастанию;
     - product2_id по возрастанию.
+
+Annetaan taulut ProductPurchases ja ProductInfo.
+
+Etsi uniikit tuotepareja (product1_id < product2_id), joita samat käyttäjät ovat ostaneet.
+
+Jokaiselle parille:
+    - laske eri ostajien määrä, jotka ovat ostaneet molemmat tuotteet;
+    - jätä mukaan parit, jotka vähintään 3 eri ostajaa on ostanut;
+    - ilmoita molempien tuotteiden kategoriat.
+
+Tulosta:
+    - product1_id, product2_id;
+    - product1_category, product2_category;
+    - customer_count.
+
+Järjestä tulos seuraavasti:
+    - customer_count laskevaan järjestykseen;
+    - product1_id nousevaan järjestykseen;
+    - product2_id nousevaan järjestykseen.
 */
 
 WITH user_product_pairs AS (
